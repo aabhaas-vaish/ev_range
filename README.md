@@ -70,7 +70,7 @@ This button can be used to generate a visualization of the shortest path from th
 
 [RouteMap](CaptureProj2.PNG)
 
-## Get Charger Coordinates}
+## Get Charger Coordinates
 This button redirects to a results webpage that displays the EV charger locations that are pitstops for the user to charge their vehicle during the trip. These are represented in the form of an ordered list of the Lat/Long coordinates for each intermediate charging station!
 [Charger](CaptureProj3.PNG)
 
