@@ -43,8 +43,8 @@ This Geocoding API can be used to perform forward Geocoding, which is the proces
 ## Graphhopper Maps API
 For visualization, the source location, charger station locations, and the destination location will be passed to the Graphhopper Maps API at [https://graphhopper.com/maps/?profile=car&layer=Omniscale](https://graphhopper.com/maps/?profile=car&layer=Omniscale) which takes in a series of Lat/Long pairs to plot the path on a map. Note that this is not a data source but just a method to visualize. In addition, the project also lists down the charging station Lat/Long coordinates as texts using another button on the webpage!
 
-![Raw](rawData.png)
-![Data](data_graph.png)
+![Raw](rawData.PNG)
+![Data](data_graph.PNG)
 
 
 # Data Structure - Graph
@@ -58,7 +58,7 @@ The primary data structure used in this project is the Graph data structure. The
     - Finally, we can run Dijkstra's algorithm to find the shortest distance between the source and destination nodes in our graph!
 
 Please note that I have also provided relevant files that interact with the cache to create the data structure (graph's adjacency matrix). First, the `makeAdjMatrix.py` file can be used to do a cache read or API call on the EV charger data and then construct the Adjacency Matrix. And finally, the `readAdjacencyMatrix.py` is a standalone file that can read and print the cached graph JSON.
-[generic_graph](graph.png)
+[generic_graph](graph.PNG)
 
 # Interaction and Presentation Options
 The project is setup using a single-page Flask Web Application which can be deployed very easily using a single command: `python flask_app.py`. The main page consists of a very simple form that allows the user to input the 3 critical variables: Source Location, Destination Location, and EV Range. These three are highlighted below:
@@ -67,16 +67,16 @@ The project is setup using a single-page Flask Web Application which can be depl
     - **EV Range**: The user can enter a numeric value for the EV Range in miles.
 
 A screenshot of the main page is attached below for reference.
-[main](CaptureProj.png)
+[main](CaptureProj.PNG)
 
 ## Get Route Map
 This button can be used to generate a visualization of the shortest path from the source to the destination with pitstops in between for charging the EV. Please note that this project gets a path from Dijkstra's algorithm and saves the result as a list of Lat/Long coordinates. This result is passed to Graphhopper's Maps API to display the plotted path on their website!
 
-[RouteMap](CaptureProj2.png)
+[RouteMap](CaptureProj2.PNG)
 
 ## Get Charger Coordinates}
 This button redirects to a results webpage that displays the EV charger locations that are pitstops for the user to charge their vehicle during the trip. These are represented in the form of an ordered list of the Lat/Long coordinates for each intermediate charging station!
-[Charger](CaptureProj3.png)
+[Charger](CaptureProj3.PNG)
 
 # Demo Video of the Project
 The project demo video can be accessed at the following link: [https://youtu.be/ruoM-9wWnN0](https://youtu.be/ruoM-9wWnN0)
