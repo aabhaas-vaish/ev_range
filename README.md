@@ -1,8 +1,6 @@
 # Introduction
 With the recent advancements in Electric Vehicle (EV) technology, general consumers have readily started adopting EVs in the United States. However, one of the remaining challenges that is impeding the adoption of EVs is the availability of charging stations. In this context, this project would focus on creating a service that allows users to find a path from a starting location to an ending location while ensuring that the users stop at charging stations (pitstops) to recharge their range-limited EVs.
 
-The data and code will be accessible at the following link - [https://www.github.com/](https://www.github.com/)
-
 ## Requirements
 Please ensure that the following packages are installed in your environment using `pip`, before you run this project's code on your system:
     - Numpy
