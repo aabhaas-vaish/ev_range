@@ -3,9 +3,7 @@ With the recent advancements in Electric Vehicle (EV) technology, general consum
 
 ## Requirements
 Please ensure that the following packages are installed in your environment using `pip`, before you run this project's code on your system:
-    - Numpy
-    - Geopy
-    - Flask
+    - Numpy, Geopy, Flask, Requests
 ## Brief Explanation
 For this project, most of the work will be done by the code in the background. In order to run this, open up your terminal and activate any environments that you had created before. After this, navigate to the folder containing the project code, and run the following command: `python flask_app.py` to start the Flask server. Finally, open up your browser and type in: `http://127.0.0.1:5000/` and hit enter to open up the webpage. Finally, on the webpage, you will need to provide the following three inputs:
   1. Source City / Landmark (within Michigan)
