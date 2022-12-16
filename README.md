@@ -45,7 +45,7 @@ For visualization, the source location, charger station locations, and the desti
 
 # Data Structure - Graph
 The primary data structure used in this project is the Graph data structure. The basic rationale of using this data structure has been highlighted below:
-    - The first step of the process is to construct an **Adjacency Matrix** of the EV charger data. The idea is that the adjacency matrix will be a dense matrix representing the connections between EV charger stations. Moreover, each entry ($i,j$) in the matrix will represent the **Geodesic** distance between station $i$ and station $j$. Note here that the Geodesic distance represents an "as-the-crow-flies" distance between two points on the earth's surface instead of road distance. This is because the daily limit of the Graphhopper API for computing road distances is very low, and hence I had to use Geopy's Geodesic distance to compute pairwise distances between stations. Please note that this data can be pre-processed and saved as a cache to save time during inference.
+    - The first step of the process is to construct an **Adjacency Matrix** of the EV charger data. The idea is that the adjacency matrix will be a dense matrix representing the connections between EV charger stations. Moreover, each entry ($i$,$j$) in the matrix will represent the **Geodesic** distance between station $i$ and station $j$. Note here that the Geodesic distance represents an "as-the-crow-flies" distance between two points on the earth's surface instead of road distance. This is because the daily limit of the Graphhopper API for computing road distances is very low, and hence I had to use Geopy's Geodesic distance to compute pairwise distances between stations. Please note that this data can be pre-processed and saved as a cache to save time during inference.
 
     - The second step is to take in the source and destinations and add them as nodes to the pre-processed (or cached) Adjacency Matrix so that we have our final graph. This step is performed when the user enters their source and destination locations on the webpage, and therefore, is an on-the-fly operation that requires computing Geodesic distances again!
 
@@ -54,7 +54,7 @@ The primary data structure used in this project is the Graph data structure. The
     - Finally, we can run Dijkstra's algorithm to find the shortest distance between the source and destination nodes in our graph!
 
 Please note that I have also provided relevant files that interact with the cache to create the data structure (graph's adjacency matrix). First, the `makeAdjMatrix.py` file can be used to do a cache read or API call on the EV charger data and then construct the Adjacency Matrix. And finally, the `readAdjacencyMatrix.py` is a standalone file that can read and print the cached graph JSON.
-[generic_graph](graph.PNG)
+[generic_graph](graph.png)
 
 # Interaction and Presentation Options
 The project is setup using a single-page Flask Web Application which can be deployed very easily using a single command: `python flask_app.py`. The main page consists of a very simple form that allows the user to input the 3 critical variables: Source Location, Destination Location, and EV Range. These three are highlighted below:
